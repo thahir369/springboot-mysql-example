@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: springboot-mysql-example   #it is used by spring cloud project like eureka
+  jpa:
+    show-sql: true    #this helps to see sql queries in logs
+    hibernate:
+      ddl-auto: create-drop   #this creates tables(based on entity class) when application starts and drop table after application ends
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: test
+    password: testuser
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs      # this is default url, we can customize if we want
+  swagger-ui:
+    path: /swagger-ui.html  # this is default url, we can customize if we want
